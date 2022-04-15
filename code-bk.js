@@ -248,3 +248,16 @@ async function main() {
     console.log(error)
   }
 }
+
+
+https://docs.near.org/docs/api/rpc
+
+https://docs.near.org/docs/tools/near-cli#near-generate-key 
+
+https://docs.near.org/docs/api/rpc
+
+
+https://wallet.testnet.near.org/login/?success_url=https%3A%2F%2Fgoogle.com%2F&failure_url=https%3A%2F%2Fyahoo.com%2F&contract_id=friendbook.msaudi.testnet&public_key=ed25519:5wG7pwTXVsX5whPkj8bBbRzZTBZRFbzc4XwBRacrQr49&methodNames=writeSomething
+
+
+https://wallet.testnet.near.org/sign?transactions=EgAAAG1oYXNzYW5pc3QudGVzdG5ldACuNjwvrRGQwtnU4Ubb56znjMRGA%2Fq%2Ft5rjNHAfxqCO3I2aGxkRRQAAEgAAAGd1ZXN0LWJvb2sudGVzdG5ldNLYqG4WZWMF5pm9fpKXeqdOaTWNAczUrYn%2BAj%2BZoJqpAQAAAAIKAAAAYWRkTWVzc2FnZRQAAAB7InRleHQiOiJIb2xhIGJvbGEifQDgV%2BtIGwAAAAAAoe3MzhvC0wAAAAAAAA%3D%3D&callbackUrl=https%3A%2F%2Fnear-examples.github.io%2Fguest-book%2F

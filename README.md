@@ -9,8 +9,12 @@
     "private_key": "45y7nvsQwTrr1VFD9K89wqnYM3So3b9VHwS21ny1tz5C3RsT61evYirrDFmzFetN4UHHvTn5NMiVw8g3VP4PBeUR"
 }
 ```
-3. Call this url and pass the required parameters including the public key you got from step 2
+3. Call this url to add the generated key to the user's list of keys. This will add the key as a FunctionCall Key
 ```https://wallet.{NETWORK_ID_HERE}.near.org/login/?success_url={SUCCESS_URL_HERE}&failure_url={FAILURE_URL_HERE}&contract_id={CONTRACT_HERE}&public_key={KEY_HERE}```
+
+Call this url if you want to the key as a FullAccess Key
+```https://wallet.{NETWORK_ID_HERE}.near.org/login/?success_url={SUCCESS_URL_HERE}&failure_url={FAILURE_URL_HERE}&public_key={KEY_HERE}```
+
 
 For example:
 ```https://wallet.testnet.near.org/login/?success_url=https://google.com&failure_url=https://yahoo.com&contract_id=friendbook.msaudi.testnet&public_key=d25519:AuXcisoKN7wLnuQMXwn7aX3UGitZ3NKtmV6rAcg7WS41```
@@ -18,7 +22,21 @@ For example:
 
 This should open the wallet for authentication and it should add the key to the user's list of keys when you approve. Now the key is added, you can create transaction with the private key
 
-4. Call ```BASE_URL/transactions``` passing the required paramters to create a transaction 
+4. Call ```BASE_URL/transactions``` passing the below paramters to create a function-call transaction 
+
+```{
+    "action_type":"function_call",
+    "sender": "msaudi.testnet",
+    "private_key": "51f2b1dSowpMzGXkAyfTRGkuvYnn9urSK7p6iqoGEqVz92PHTuqDZCJQpp8ty9gfGaWrzRFrUBWGTduut4WZraMo",
+    "receiver": "friendbook.msaudi.testnet",
+    "method_name": "writeSomething",
+    "network_id": "testnet",
+    "method_args": {
+        "message": "Best of luck",
+        "toWho": "mhassanist.testnet"
+    }
+}```
+
 
 
 

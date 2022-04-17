@@ -24,7 +24,8 @@ This should open the wallet for authentication and it should add the key to the 
 
 4. Call ```BASE_URL/transactions``` passing the below paramters to create a function-call transaction 
 
-```{
+```
+{
     "action_type":"function_call",
     "sender": "msaudi.testnet",
     "private_key": "51f2b1dSowpMzGXkAyfTRGkuvYnn9urSK7p6iqoGEqVz92PHTuqDZCJQpp8ty9gfGaWrzRFrUBWGTduut4WZraMo",
@@ -35,10 +36,20 @@ This should open the wallet for authentication and it should add the key to the 
         "message": "Best of luck",
         "toWho": "mhassanist.testnet"
     }
-}```
+}
+```
+or the below parameters to create a transfer transaction 
 
-
-
+{
+    "action_type":"transfer",
+    "sender": "msaudi.testnet",
+    "private_key": "2fjkgQZnD5rkwnUkHVekaBvxu6L9bGZ7uorRrAGy8oNYJkdEjt55NWuPy8GbHp3wrY4tFYnjuGn23NQ3BWodWn4F",
+    "amount":"1",
+    "receiver": "mhassanisti.testnet",
+    "network_id": "testnet"
+    
+}
+```
 
 This request should return a signed encoded transaction ready to be submitted like that:
 ```DgAAAG1zYXVkaS50ZXN0bmV0AElVNHz63svr9aqC13v0+BEZJSHm/3Ty4LLlEV889WNiAphXqqdPAAAZAAAAZnJpZW5kYm9vay5tc2F1ZGkudGVzdG5ldNyi3FGZZgXLbuAdcjFR7aMJAG4RvzXwcf6WS5p0GtmWAQAAAAIOAAAAd3JpdGVTb21ldGhpbmc3AAAAeyJtZXNzYWdlIjoiQmVzdCBvZiBsdWNrIiwidG9XaG8iOiJtaGFzc2FuaXN0LnRlc3RuZXQifQDgV+tIGwAAAAAAAAAAAAAAAAAAAAAAAAA1UoCHwOV7eBbLM1V0sNb3M2P1CwLpfd0LTwnGBs53XQRZua+oFB7yrQP7lLvpH2LAnHHNczMfellpp4W+O9AA```

@@ -1,8 +1,10 @@
 const nearAPI = require("near-api-js")
 const sha256 = require("js-sha256")
 const express = require("express")
+
 const app = express()
 const port = 8080
+
 const DEFAULT_FUNC_CALL_GAS = 30000000000000
 
 async function generateKeys() {
@@ -24,35 +26,52 @@ app.post("/keys", async (req, res) => {
 })
 
 app.post("/transactions", express.json({ type: "*/*" }), async (req, res) => {
-  sender = req.body.sender_account
+  sender = req.body.sender
   receiver = req.body.receiver
-  privateKey = req.body.private_key
+  privateKey = req.body.private_key //TODO Consider securing the private key plain transmission
   methodName = req.body.method_name
   methodArgs = req.body.method_args
   networkId = req.body.network_id
+  action = req.body.action_type
+  amountString = req.body.amount
 
+  //TODO add validation to the above fields.
   let connInfo = { url: "https://rpc." + networkId + ".near.org" }
   // sets up a NEAR API/RPC provider to interact with the blockchain
   const provider = new nearAPI.providers.JsonRpcProvider(connInfo)
 
+  //generate keypair from the private key sent to the request
   const keyPair = nearAPI.utils.key_pair.KeyPairEd25519.fromString(privateKey)
   const publicKey = keyPair.getPublicKey()
+
+  //check the pubic key exsists in the user access keys.
+  //you should call this url to add the key to the user's set of keys before making transactions
+  // https://wallet.{NETWORK_ID_HERE}.near.org/login/?success_url={SUCCESS_URL_HERE}&failure_url={FAILURE_URL_HERE}&contract_id={CONTRACT_HERE}&public_key={KEY_HERE}
+
+  console.log(publicKey.toString())
   const accessKey = await provider
-    .query(`access_key/${sender}/${publicKey}`, "")
+    .query(`access_key/${sender}/${publicKey.toString()}`, "")
     .catch((e) => {
       res.send(e)
     })
-  const nonce = ++accessKey.nonce
+  const nonce = ++accessKey.nonce //unique number required for each transaction signed with an access key
 
   // constructs actions that will be passed to the createTransaction method below
-  const actions = [
-    nearAPI.transactions.functionCall(
-      methodName,
-      methodArgs,
-      DEFAULT_FUNC_CALL_GAS,
-      0
-    ),
-  ]
+  //currently supports function call only.
+  actions = null
+  if (action == "transfer") {
+    const amount = nearAPI.utils.format.parseNearAmount(amountString)
+    actions = [nearAPI.transactions.transfer(amount)]
+  } else if (action == "function_call") {
+    actions = [
+      nearAPI.transactions.functionCall(
+        methodName,
+        methodArgs,
+        DEFAULT_FUNC_CALL_GAS,
+        0
+      ),
+    ]
+  }
 
   // converts a recent block hash into an array of bytes
   // this hash was retrieved earlier when creating the accessKey (Line 26)
@@ -90,7 +109,6 @@ app.post("/transactions", express.json({ type: "*/*" }), async (req, res) => {
   const signedSerializedTx = signedTransaction.encode()
   const encodedTransaction = Buffer.from(signedSerializedTx).toString("base64")
   console.log(encodedTransaction)
-  encodedTransaction
 
   res.send(encodedTransaction)
 })

@@ -257,7 +257,19 @@ https://docs.near.org/docs/tools/near-cli#near-generate-key
 https://docs.near.org/docs/api/rpc
 
 
-https://wallet.testnet.near.org/login/?success_url=https%3A%2F%2Fgoogle.com%2F&failure_url=https%3A%2F%2Fyahoo.com%2F&contract_id=friendbook.msaudi.testnet&public_key=ed25519:5wG7pwTXVsX5whPkj8bBbRzZTBZRFbzc4XwBRacrQr49&methodNames=writeSomething
+https://wallet.testnet.near.org/login/?success_url=https%3A%2F%2Fgoogle.com%2F&failure_url=https%3A%2F%2Fyahoo.com%2F&contract_id=friendbook.msaudi.testnet&public_key=ed25519:4ZdVoF6NJoKvYQNRRE3vVnVvM6tmPzjfiWJhdF5GCUnC
 
 
-https://wallet.testnet.near.org/sign?transactions=EgAAAG1oYXNzYW5pc3QudGVzdG5ldACuNjwvrRGQwtnU4Ubb56znjMRGA%2Fq%2Ft5rjNHAfxqCO3I2aGxkRRQAAEgAAAGd1ZXN0LWJvb2sudGVzdG5ldNLYqG4WZWMF5pm9fpKXeqdOaTWNAczUrYn%2BAj%2BZoJqpAQAAAAIKAAAAYWRkTWVzc2FnZRQAAAB7InRleHQiOiJIb2xhIGJvbGEifQDgV%2BtIGwAAAAAAoe3MzhvC0wAAAAAAAA%3D%3D&callbackUrl=https%3A%2F%2Fnear-examples.github.io%2Fguest-book%2F
+https://wallet.testnet.near.org/sign?transactions=DgAAAG1zYXVkaS50ZXN0bmV0AGNQqm7XXSqWijPSJjG/5WJvK05UEGzZjHhkaF1kYlmyz5ZE8n9HAAASAAAAbWhhc3NhbmlzdC50ZXN0bmV0pJ63jAYIybbgzQ9C76pXgL+wrlWVgZZwwgCsAX07oqQBAAAAAwAAgHFkM7Ypoz0BAAAAAAAABR/ibIN8fvYbL40btTuAxjJYuZm6lPL4Ytn6gHW8ntxzFL9zEs/cXIgYSVrPeWnKzxmxfVsXx3miBbhS5eR9Aw==&callbackUrl=https://google.com
+
+
+https://wallet.testnet.near.org/sign?transactions=DgAAAG1zYXVkaS50ZXN0bmV0AGNQqm7XXSqWijPSJjG/5WJvK05UEGzZjHhkaF1kYlmyz5ZE8n9HAAASAAAAbWhhc3NhbmlzdC50ZXN0bmV0pJ63jAYIybbgzQ9C76pXgL+wrlWVgZZwwgCsAX07oqQBAAAAAwAAgHFkM7Ypoz0BAAAAAAAABR/ibIN8fvYbL40btTuAxjJYuZm6lPL4Ytn6gHW8ntxzFL9zEs/cXIgYSVrPeWnKzxmxfVsXx3miBbhS5eR9Aw==&callbackUrl=https%3A%2F%2Fnear-examples.github.io%2Fguest-book%2F
+DgAAAG1zYXVkaS50ZXN0bmV0AElVNHz63svr9aqC13v0+BEZJSHm/3Ty4LLlEV889WNiA5hXqqdPAAASAAAAbWhhc3NhbmlzdC50ZXN0bmV0ejKgwq8KBOODWlu1wF4peTOgLrarbav7pi3ENcW7tPIBAAAAAwAAgHFkM7Ypoz0BAAAAAAAA3X7uGjLyqbecJXyj+L4ypFMp6ILXu6nwZQHXlkkjroDnVzJTdpmr0LCsYyRsQmXNH5n+bRSJGXuymUqmmARECA==
+
+
+
+"public_key": "ed25519:2ddZi41k1rTxCPPTx6epdt5whJRa6KfabCxCPRsnZHGb",
+"private_key": "2fjkgQZnD5rkwnUkHVekaBvxu6L9bGZ7uorRrAGy8oNYJkdEjt55NWuPy8GbHp3wrY4tFYnjuGn23NQ3BWodWn4F"
+
+
+

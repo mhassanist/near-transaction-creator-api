@@ -40,6 +40,7 @@ This should open the wallet for authentication and it should add the key to the 
 ```
 or the below parameters to create a transfer transaction 
 
+```
 {
     "action_type":"transfer",
     "sender": "msaudi.testnet",

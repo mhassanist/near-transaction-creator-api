@@ -1,7 +1,7 @@
 # near-transaction-creator-api
 
 ## How to use?
-1. Call BASE_URL/keys to gerneate new key pair
+1. Call ```BASE_URL/keys``` to gerneate new key pair
 2. Response should be something like that
 ```javascript
 {
@@ -23,7 +23,7 @@ This should open the wallet for authentication and it should add the key to the 
 
 
 This request should return a signed encoded transaction ready to be submitted like that:
-DgAAAG1zYXVkaS50ZXN0bmV0AElVNHz63svr9aqC13v0+BEZJSHm/3Ty4LLlEV889WNiAphXqqdPAAAZAAAAZnJpZW5kYm9vay5tc2F1ZGkudGVzdG5ldNyi3FGZZgXLbuAdcjFR7aMJAG4RvzXwcf6WS5p0GtmWAQAAAAIOAAAAd3JpdGVTb21ldGhpbmc3AAAAeyJtZXNzYWdlIjoiQmVzdCBvZiBsdWNrIiwidG9XaG8iOiJtaGFzc2FuaXN0LnRlc3RuZXQifQDgV+tIGwAAAAAAAAAAAAAAAAAAAAAAAAA1UoCHwOV7eBbLM1V0sNb3M2P1CwLpfd0LTwnGBs53XQRZua+oFB7yrQP7lLvpH2LAnHHNczMfellpp4W+O9AA
+```DgAAAG1zYXVkaS50ZXN0bmV0AElVNHz63svr9aqC13v0+BEZJSHm/3Ty4LLlEV889WNiAphXqqdPAAAZAAAAZnJpZW5kYm9vay5tc2F1ZGkudGVzdG5ldNyi3FGZZgXLbuAdcjFR7aMJAG4RvzXwcf6WS5p0GtmWAQAAAAIOAAAAd3JpdGVTb21ldGhpbmc3AAAAeyJtZXNzYWdlIjoiQmVzdCBvZiBsdWNrIiwidG9XaG8iOiJtaGFzc2FuaXN0LnRlc3RuZXQifQDgV+tIGwAAAAAAAAAAAAAAAAAAAAAAAAA1UoCHwOV7eBbLM1V0sNb3M2P1CwLpfd0LTwnGBs53XQRZua+oFB7yrQP7lLvpH2LAnHHNczMfellpp4W+O9AA```
 
 
 5. You can submit this transaction via normal RPC call like that 
@@ -77,113 +77,8 @@ The result should be something like that:
                                 "cost": "BASE",
                                 "cost_category": "WASM_HOST_COST",
                                 "gas_used": "3971521665"
-                            },
-                            {
-                                "cost": "CONTRACT_COMPILE_BASE",
-                                "cost_category": "WASM_HOST_COST",
-                                "gas_used": "35445963"
-                            },
-                            {
-                                "cost": "CONTRACT_COMPILE_BYTES",
-                                "cost_category": "WASM_HOST_COST",
-                                "gas_used": "11356399500"
-                            },
-                            {
-                                "cost": "READ_MEMORY_BASE",
-                                "cost_category": "WASM_HOST_COST",
-                                "gas_used": "26098632000"
-                            },
-                            {
-                                "cost": "READ_MEMORY_BYTE",
-                                "cost_category": "WASM_HOST_COST",
-                                "gas_used": "1030161243"
-                            },
-                            {
-                                "cost": "READ_REGISTER_BASE",
-                                "cost_category": "WASM_HOST_COST",
-                                "gas_used": "7551495558"
-                            },
-                            {
-                                "cost": "READ_REGISTER_BYTE",
-                                "cost_category": "WASM_HOST_COST",
-                                "gas_used": "13995804"
-                            },
-                            {
-                                "cost": "STORAGE_HAS_KEY_BASE",
-                                "cost_category": "WASM_HOST_COST",
-                                "gas_used": "108079793250"
-                            },
-                            {
-                                "cost": "STORAGE_HAS_KEY_BYTE",
-                                "cost_category": "WASM_HOST_COST",
-                                "gas_used": "307908450"
-                            },
-                            {
-                                "cost": "STORAGE_READ_BASE",
-                                "cost_category": "WASM_HOST_COST",
-                                "gas_used": "56356845750"
-                            },
-                            {
-                                "cost": "STORAGE_READ_KEY_BYTE",
-                                "cost_category": "WASM_HOST_COST",
-                                "gas_used": "154762665"
-                            },
-                            {
-                                "cost": "STORAGE_READ_VALUE_BYTE",
-                                "cost_category": "WASM_HOST_COST",
-                                "gas_used": "409603365"
-                            },
-                            {
-                                "cost": "STORAGE_WRITE_BASE",
-                                "cost_category": "WASM_HOST_COST",
-                                "gas_used": "192590208000"
-                            },
-                            {
-                                "cost": "STORAGE_WRITE_EVICTED_BYTE",
-                                "cost_category": "WASM_HOST_COST",
-                                "gas_used": "2376680718"
-                            },
-                            {
-                                "cost": "STORAGE_WRITE_KEY_BYTE",
-                                "cost_category": "WASM_HOST_COST",
-                                "gas_used": "986760138"
-                            },
-                            {
-                                "cost": "STORAGE_WRITE_VALUE_BYTE",
-                                "cost_category": "WASM_HOST_COST",
-                                "gas_used": "4900929162"
-                            },
-                            {
-                                "cost": "TOUCHING_TRIE_NODE",
-                                "cost_category": "WASM_HOST_COST",
-                                "gas_used": "2044948402602"
-                            },
-                            {
-                                "cost": "WASM_INSTRUCTION",
-                                "cost_category": "WASM_HOST_COST",
-                                "gas_used": "101262340212"
-                            },
-                            {
-                                "cost": "WRITE_MEMORY_BASE",
-                                "cost_category": "WASM_HOST_COST",
-                                "gas_used": "8411384583"
-                            },
-                            {
-                                "cost": "WRITE_MEMORY_BYTE",
-                                "cost_category": "WASM_HOST_COST",
-                                "gas_used": "386775624"
-                            },
-                            {
-                                "cost": "WRITE_REGISTER_BASE",
-                                "cost_category": "WASM_HOST_COST",
-                                "gas_used": "14327612430"
-                            },
-                            {
-                                "cost": "WRITE_REGISTER_BYTE",
-                                "cost_category": "WASM_HOST_COST",
-                                "gas_used": "821137824"
                             }
-                        ],
+                            ],
                         "version": 1
                     },
                     "receipt_ids": [

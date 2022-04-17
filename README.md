@@ -1,4 +1,4 @@
-# near-transaction-creator-api
+# NEAR Transaction Creator Api (beta)
 
 A simple API to generate keys and create transaction on the NEAR Protocol. This can be useful if you are developing for platform that does not have supported SDK yet (for example a mobile app).
 

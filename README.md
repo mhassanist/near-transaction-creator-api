@@ -47,6 +47,7 @@ Response will include the result hash like that:
 }
 ```
 6. You can validate the hash from the explorer by searching for that transaction hash or by calling the below url:
+```
 POST https://rpc.testnet.near.org
 {
   "jsonrpc": "2.0",
@@ -56,8 +57,9 @@ POST https://rpc.testnet.near.org
     "G37dJ6yoeCykAo5eQmYvF4XEZyGUpEi7fxvXYXqquhin","msaudi.near"
   ]
 }
-
+```
 The result should be something like that:
+```
 {
     "jsonrpc": "2.0",
     "result": {
@@ -269,4 +271,4 @@ The result should be something like that:
     },
     "id": "dontcare"
 }
-
+```

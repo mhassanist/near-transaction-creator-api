@@ -3,21 +3,22 @@
 ## How to use?
 1. Call BASE_URL/keys to gerneate new key pair
 2. Response should be something like that
+```javascript
 {
     "public_key": "ed25519:AuXcisoKN7wLnuQMXwn7aX3UGitZ3NKtmV6rAcg7WS41",
     "private_key": "45y7nvsQwTrr1VFD9K89wqnYM3So3b9VHwS21ny1tz5C3RsT61evYirrDFmzFetN4UHHvTn5NMiVw8g3VP4PBeUR"
 }
-
+```
 3. Call this url and pass the required parameters including the public key you got from step 2
-https://wallet.{NETWORK_ID_HERE}.near.org/login/?success_url={SUCCESS_URL_HERE}&failure_url={FAILURE_URL_HERE}&contract_id={CONTRACT_HERE}&public_key={KEY_HERE}
+```https://wallet.{NETWORK_ID_HERE}.near.org/login/?success_url={SUCCESS_URL_HERE}&failure_url={FAILURE_URL_HERE}&contract_id={CONTRACT_HERE}&public_key={KEY_HERE}```
 
 For example:
-https://wallet.testnet.near.org/login/?success_url=https://google.com&failure_url=https://yahoo.com&contract_id=friendbook.msaudi.testnet&public_key=d25519:AuXcisoKN7wLnuQMXwn7aX3UGitZ3NKtmV6rAcg7WS41
+```https://wallet.testnet.near.org/login/?success_url=https://google.com&failure_url=https://yahoo.com&contract_id=friendbook.msaudi.testnet&public_key=d25519:AuXcisoKN7wLnuQMXwn7aX3UGitZ3NKtmV6rAcg7WS41```
 
 
 This should open the wallet for authentication and it should add the key to the user's list of keys when you approve. Now the key is added, you can create transaction with the private key
 
-4. Call BASE_URL/transactions passing the required paramters to create a transaction 
+4. Call ```BASE_URL/transactions``` passing the required paramters to create a transaction 
 
 
 
@@ -26,6 +27,7 @@ DgAAAG1zYXVkaS50ZXN0bmV0AElVNHz63svr9aqC13v0+BEZJSHm/3Ty4LLlEV889WNiAphXqqdPAAAZ
 
 
 5. You can submit this transaction via normal RPC call like that 
+```
 POST https://rpc.testnet.near.org
 {
   "jsonrpc": "2.0",
@@ -35,14 +37,15 @@ POST https://rpc.testnet.near.org
     "DgAAAG1zYXVkaS50ZXN0bmV0AElVNHz63svr9aqC13v0+BEZJSHm/3Ty4LLlEV889WNiAphXqqdPAAAZAAAAZnJpZW5kYm9vay5tc2F1ZGkudGVzdG5ldNyi3FGZZgXLbuAdcjFR7aMJAG4RvzXwcf6WS5p0GtmWAQAAAAIOAAAAd3JpdGVTb21ldGhpbmc3AAAAeyJtZXNzYWdlIjoiQmVzdCBvZiBsdWNrIiwidG9XaG8iOiJtaGFzc2FuaXN0LnRlc3RuZXQifQDgV+tIGwAAAAAAAAAAAAAAAAAAAAAAAAA1UoCHwOV7eBbLM1V0sNb3M2P1CwLpfd0LTwnGBs53XQRZua+oFB7yrQP7lLvpH2LAnHHNczMfellpp4W+O9AA"
   ]
 }
-
+```
 Response will include the result hash like that:
+```
 {
     "jsonrpc": "2.0",
     "result": "G37dJ6yoeCykAo5eQmYvF4XEZyGUpEi7fxvXYXqquhin",
     "id": "dontcare"
 }
-
+```
 6. You can validate the hash from the explorer by searching for that transaction hash or by calling the below url:
 POST https://rpc.testnet.near.org
 {

@@ -1,5 +1,12 @@
 # near-transaction-creator-api
 
+A simple API to generate keys and create transaction on the NEAR Protocol. This can be useful if you are developing for platform that does not have supported SDK yet (for example a mobile app).
+
+## Using this API You can
+1. Generate KeyPair
+2. Genarate a  __function-call__ or __transfer__ transactions
+3. Submit transactinos and check the results. 
+
 ## How to use?
 1. Call ```BASE_URL/keys``` to gerneate new key pair
 2. Response should be something like that

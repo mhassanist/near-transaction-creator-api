@@ -1,5 +1,5 @@
 # NEAR Transaction Creator Api (beta)
-
+# :_NO_ENTRY: USE WITH CAUTION | SHARING PRIVATE KEYS IS A SECURITY ISSUE
 A simple API to generate keys and create transaction on the NEAR Protocol. This can be useful if you are developing for platform that does not have supported SDK yet (for example a mobile app).
 
 ## Using this API You can
